@@ -9,47 +9,62 @@
 <body class="dashboard-body">
 
     <div class="dashboard-layout">
+        <!-- Sidebar Navigation -->
         <aside class="sidebar">
-            <h1 class="logo">DesignerGPT</h1>
+            <div data-lang="logo_text"><h1 class="logo">DesignerGPT</h1></div>
             <nav class="sidebar-nav">
                 <ul>
-                    <li class="active"><a href="#">Business Plan</a></li>
-                    <li><a href="#">Logo Design</a></li>
-                    <li><a href="#">Business Card</a></li>
-                    <li><a href="#">Invoice Template</a></li>
-                    <li><a href="#">Strategic Forecast</a></li>
+                    <li class="active"><a href="#" data-lang="dashboard_nav_bp">Business Plan</a></li>
+                    <li><a href="#" data-lang="dashboard_nav_logo">Logo Design</a></li>
+                    <li><a href="#" data-lang="dashboard_nav_bc">Business Card</a></li>
+                    <li><a href="#" data-lang="dashboard_nav_invoice">Invoice Template</a></li>
+                    <li><a href="#" data-lang="dashboard_nav_forecast">Strategic Forecast</a></li>
                 </ul>
             </nav>
             <div class="user-info">
-                <p>Usage: 0/2 Today</p>
-                <a href="index.html">Logout</a>
+                <p data-lang="dashboard_usage">Usage: 0/2 Today</p>
+                <a href="index.html" data-lang="dashboard_logout">Logout</a>
+            </div>
+             <!-- The toggles are not in the header for this page, so we add them to the sidebar -->
+            <div class="header-controls">
+                 <div class="lang-switcher">
+                    <button id="lang-en">EN</button>
+                    <button id="lang-fr">FR</button>
+                </div>
+                <div class="theme-switcher">
+                    <label class="switch">
+                        <input type="checkbox" id="theme-toggle">
+                        <span class="slider"></span>
+                    </label>
+                </div>
             </div>
         </aside>
 
+        <!-- Main Content Area -->
         <main class="dashboard-main">
             <header class="dashboard-header">
-                <h2>AI Business Plan Generator</h2>
+                <h2 data-lang="dashboard_header_title">AI Business Plan Generator</h2>
             </header>
             
             <div class="chat-container">
                 <div class="ai-response">
-                    <p><strong>DesignerGPT:</strong> Welcome! What is the name of your business and what industry are you in? Let's start building your business plan.</p>
+                    <p><strong data-lang="dashboard_gpt_name">DesignerGPT:</strong> <span data-lang="dashboard_welcome_msg">Welcome! What is the name of your business and what industry are you in? Let's start building your business plan.</span></p>
                 </div>
 
                 <div class="user-prompt">
                     <p><strong>You:</strong> My business is called "Artisan Bakes," and it's a home-based bakery specializing in sourdough bread.</p>
                 </div>
-
-                </div>
+            </div>
 
             <div class="chat-input-area">
                 <textarea placeholder="Type your message here..."></textarea>
-                <label for="file-upload" class="btn">Upload Document</label>
+                <label for="file-upload" class="btn" data-lang="dashboard_upload_btn">Upload Document</label>
                 <input type="file" id="file-upload" style="display: none;">
-                <button class="btn btn-primary">Send</button>
+                <button class="btn btn-primary" data-lang="dashboard_send_btn">Send</button>
             </div>
         </main>
     </div>
 
+    <script src="app.js"></script>
 </body>
 </html>
