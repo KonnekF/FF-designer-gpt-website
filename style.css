@@ -1,10 +1,42 @@
-/* General Body & Font Styles */
+/* ------------------------- */
+/* 1. IMPORT & VARIABLES     */
+/* ------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+    /* Color Palette (Light Mode) */
+    --bg-color: #f8f9fa;
+    --bg-secondary-color: #ffffff;
+    --text-color: #343a40;
+    --text-secondary-color: #6c757d;
+    --border-color: #dee2e6;
+    --primary-color: #0d6efd;
+    --primary-color-hover: #0b5ed7;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode {
+    /* Color Palette (Dark Mode) */
+    --bg-color: #121212;
+    --bg-secondary-color: #1e1e1e;
+    --text-color: #e9ecef;
+    --text-secondary-color: #adb5bd;
+    --border-color: #495057;
+    --primary-color: #4dabf7;
+    --primary-color-hover: #74c0fc;
+    --shadow-color: rgba(255, 255, 255, 0.05);
+}
+
+/* ------------------------- */
+/* 2. GENERAL & LAYOUT       */
+/* ------------------------- */
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     margin: 0;
-    background-color: #f8f9fa;
-    color: #333;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .container {
@@ -13,11 +45,18 @@ body {
     padding: 0 20px;
 }
 
-/* Header & Navigation */
+/* ------------------------- */
+/* 3. HEADER & NAVIGATION    */
+/* ------------------------- */
 header {
-    background-color: #fff;
+    background-color: var(--bg-secondary-color);
     padding: 1rem 0;
-    border-bottom: 1px solid #e9ecef;
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 4px var(--shadow-color);
 }
 
 header .container {
@@ -28,8 +67,8 @@ header .container {
 
 .logo {
     font-size: 1.5rem;
-    font-weight: bold;
-    color: #0d6efd;
+    font-weight: 700;
+    color: var(--primary-color);
 }
 
 .logo a {
@@ -45,172 +84,203 @@ nav ul {
 }
 
 nav ul li {
-    margin-left: 20px;
+    margin-left: 25px;
 }
 
 nav a {
     text-decoration: none;
-    color: #555;
+    color: var(--text-color);
     font-weight: 500;
+    transition: color 0.2s ease-in-out;
 }
 
-/* Buttons */
+nav a:hover {
+    color: var(--primary-color);
+}
+
+.header-controls {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* ------------------------- */
+/* 4. BUTTONS & FORMS        */
+/* ------------------------- */
 .btn {
     display: inline-block;
-    padding: 10px 20px;
-    border-radius: 6px;
+    padding: 12px 24px;
+    border-radius: 8px;
     text-decoration: none;
-    background-color: #6c757d;
-    color: #fff;
+    background-color: var(--text-secondary-color);
+    color: var(--bg-secondary-color);
     border: none;
     cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
 }
 
 .btn-primary {
-    background-color: #0d6efd;
+    background-color: var(--primary-color);
+    color: #fff;
 }
 
-/* Hero Section */
+.btn-primary:hover {
+    background-color: var(--primary-color-hover);
+}
+
+/* Form Styles */
+.form-container {
+    max-width: 400px;
+    margin: auto;
+    padding: 40px;
+    background: var(--bg-secondary-color);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px var(--shadow-color);
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* ------------------------- */
+/* 5. PAGE SECTIONS (HERO, FEATURES) */
+/* ------------------------- */
 .hero {
-    background-color: #e9ecef;
+    background: linear-gradient(45deg, var(--bg-color), var(--bg-secondary-color));
     text-align: center;
-    padding: 80px 0;
+    padding: 100px 0;
 }
 
 .hero h2 {
-    font-size: 2.5rem;
+    font-size: 3rem;
+    font-weight: 700;
 }
 
-/* Features Section */
+.hero p {
+    font-size: 1.1rem;
+    color: var(--text-secondary-color);
+    max-width: 600px;
+    margin: 20px auto 30px;
+}
+
 .features {
-    padding: 60px 0;
+    padding: 80px 0;
     text-align: center;
 }
 
 .feature-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    margin-top: 40px;
-}
-
-.feature-item {
-    background: #fff;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-}
-
-/* Pricing Section */
-.pricing {
-    padding: 60px 0;
-    text-align: center;
-}
-
-.pricing-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
     margin-top: 40px;
 }
 
-.pricing-card {
-    background: #fff;
+.feature-item {
+    background: var(--bg-secondary-color);
     padding: 30px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    text-align: left;
-    position: relative;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.pricing-card.popular {
-    border-color: #0d6efd;
-    border-width: 2px;
+.feature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px var(--shadow-color);
 }
-.badge {
-    position: absolute;
-    top: -15px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #0d6efd;
+
+/* ------------------------- */
+/* 6. NEW CONTROLS (THEME & LANG) */
+/* ------------------------- */
+
+/* Language Switcher */
+.lang-switcher button {
+    background: none;
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary-color);
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.lang-switcher button:hover {
+    background-color: var(--border-color);
+    color: var(--text-color);
+}
+
+.lang-switcher button.active {
+    background-color: var(--primary-color);
     color: white;
-    padding: 5px 15px;
-    border-radius: 20px;
-    font-size: 0.8rem;
+    border-color: var(--primary-color);
 }
 
-
-.pricing-card .price {
-    font-size: 2rem;
-    font-weight: bold;
-    margin: 10px 0;
+/* Theme Switcher Toggle */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 28px;
 }
 
-.pricing-card ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 20px 0;
+.switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
 }
 
-/* Login Form */
-.login-form {
-    padding: 60px 0;
-}
-.form-container {
-    max-width: 400px;
-    margin: auto;
-    padding: 40px;
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-}
-.form-group {
-    margin-bottom: 20px;
-}
-.form-group label {
-    display: block;
-    margin-bottom: 5px;
-}
-.form-group input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-.form-options {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-    font-size: 0.9rem;
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
 }
 
-/* Dashboard Layout */
-.dashboard-body { background-color: #fff; }
-.dashboard-layout { display: flex; height: 100vh; }
-.sidebar {
-    width: 260px;
-    background: #f8f9fa;
-    padding: 20px;
-    border-right: 1px solid #e9ecef;
-    display: flex;
-    flex-direction: column;
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
 }
-.sidebar-nav ul { flex-direction: column; }
-.sidebar-nav li { margin: 15px 0; }
-.sidebar-nav li.active a { color: #0d6efd; font-weight: bold; }
-.user-info { margin-top: auto; }
-.dashboard-main { flex: 1; display: flex; flex-direction: column; }
-.dashboard-header { padding: 20px; border-bottom: 1px solid #e9ecef; }
-.chat-container { flex: 1; padding: 20px; overflow-y: auto; }
-.ai-response, .user-prompt { margin-bottom: 20px; }
-.chat-input-area { padding: 20px; border-top: 1px solid #e9ecef; display: flex; gap: 10px; }
-.chat-input-area textarea { flex: 1; padding: 10px; border-radius: 6px; border: 1px solid #ccc; resize: none; }
 
-/* Footer */
+input:checked + .slider {
+    background-color: var(--primary-color);
+}
+
+input:checked + .slider:before {
+    transform: translateX(22px);
+}
+
+/* ------------------------- */
+/* 7. FOOTER & MISC          */
+/* ------------------------- */
 footer {
     text-align: center;
-    padding: 20px 0;
+    padding: 30px 0;
     margin-top: 40px;
-    background-color: #e9ecef;
+    background-color: var(--bg-secondary-color);
+    border-top: 1px solid var(--border-color);
+    color: var(--text-secondary-color);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
