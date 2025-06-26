@@ -4,25 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DesignerGPT - Your AI Business Partner</title>
-    <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    
+    <!-- AOS Animation Library CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- Your Stylesheet -->
     <link rel="stylesheet" href="style.css">
+    
+    <!-- Netlify Identity Widget -->
+    <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
 
     <header>
         <div class="container">
             <div data-lang="logo_text"><h1 class="logo"><a href="index.html">DesignerGPT</a></h1></div>
-<nav>
-    <ul>
-        <!-- This link is for index.html. On pricing.html, use href="index.html#features" -->
-        <li><a href="#features" data-lang="nav_features">Features</a></li>
-        <li><a href="pricing.html" data-lang="nav_pricing">Pricing</a></li>
-        
-        <!-- NEW LOGIN/LOGOUT BUTTONS -->
-        <li id="login-button"><a href="#" data-netlify-identity-button data-lang="nav_login">Login</a></li>
-        <li id="logout-button" style="display: none;"><a href="#" data-lang="dashboard_logout">Logout</a></li>
-    </ul>
-</nav>
+            <nav>
+                <ul>
+                    <li><a href="#features" data-lang="nav_features">Features</a></li>
+                    <li><a href="pricing.html" data-lang="nav_pricing">Pricing</a></li>
+                    <li id="login-button"><a href="#" data-lang="nav_login">Login</a></li>
+                    <li id="logout-button" style="display: none;"><a href="#" data-lang="dashboard_logout">Logout</a></li>
+                </ul>
+            </nav>
             <div class="header-controls">
                 <div class="lang-switcher">
                     <button id="lang-en">EN</button>
@@ -39,37 +43,91 @@
     </header>
 
     <main>
-        <!-- Hero Section -->
+        <!-- New Hero Section -->
         <section class="hero">
-            <div class="container">
-                <h2 data-lang="hero_title">Build and Scale Your Dream Business with AI</h2>
-                <p data-lang="hero_subtitle">From business plans to branding, DesignerGPT is the co-founder you've always wanted. For entrepreneurs, solopreneurs, and side-hustlers.</p>
-                <a href="pricing.html" class="btn btn-primary" data-lang="hero_button">Get Started for Free</a>
+            <div class="container hero-content">
+                <div class="hero-text" data-aos="fade-right">
+                    <h2 data-lang="hero_title">Build and Scale Your Dream Business with AI</h2>
+                    <p data-lang="hero_subtitle">From business plans to branding, DesignerGPT is the co-founder you've always wanted. For entrepreneurs, solopreneurs, and side-hustlers.</p>
+                    <a href="pricing.html" class="btn btn-primary btn-lg" data-lang="hero_button">Get Started for Free</a>
+                </div>
+                <div class="hero-image" data-aos="fade-left">
+                    <!-- Placeholder for a cool graphic or product shot -->
+                    <img src="https://placehold.co/500x450/74c0fc/FFFFFF?text=AI+Magic" alt="AI generating business ideas">
+                </div>
             </div>
         </section>
 
-        <!-- Features Section -->
+        <!-- New "How It Works" Section -->
+        <section id="how-it-works" class="how-it-works">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Get Your Business Running in 3 Easy Steps</h2>
+                <div class="steps-grid">
+                    <div class="step" data-aos="fade-up" data-aos-delay="100">
+                        <div class="step-number">1</div>
+                        <h3>Describe Your Idea</h3>
+                        <p>Tell our AI about your talent, passion, or business idea in simple terms.</p>
+                    </div>
+                    <div class="step" data-aos="fade-up" data-aos-delay="200">
+                        <div class="step-number">2</div>
+                        <h3>Generate Assets</h3>
+                        <p>Instantly create everything you need: logos, business plans, marketing copy, and more.</p>
+                    </div>
+                    <div class="step" data-aos="fade-up" data-aos-delay="300">
+                        <div class="step-number">3</div>
+                        <h3>Launch & Scale</h3>
+                        <p>Use your new assets and strategic forecasts to launch your business and grow with confidence.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Revamped Features Section -->
         <section id="features" class="features">
             <div class="container">
-                <h2 data-lang="features_title">Core Features</h2>
+                <h2 class="section-title" data-aos="fade-up" data-lang="features_title">Core Features</h2>
                 <div class="feature-grid">
-                    <div class="feature-item">
+                    <div class="feature-item" data-aos="fade-up" data-aos-delay="100">
+                        <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg></div>
                         <h3 data-lang="feature1_title">AI Business Plan</h3>
                         <p data-lang="feature1_text">Generate a comprehensive business plan tailored to your vision.</p>
                     </div>
-                    <div class="feature-item">
+                    <div class="feature-item" data-aos="fade-up" data-aos-delay="200">
+                         <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg></div>
                         <h3 data-lang="feature2_title">Logo & Branding</h3>
                         <p data-lang="feature2_text">Create a unique logo and business card designs in seconds.</p>
                     </div>
-                    <div class="feature-item">
+                    <div class="feature-item" data-aos="fade-up" data-aos-delay="300">
+                        <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg></div>
                         <h3 data-lang="feature3_title">Strategic Planning</h3>
                         <p data-lang="feature3_text">Get AI-driven forecasts based on market trends, risk analysis, and more.</p>
                     </div>
-                    <div class="feature-item">
+                    <div class="feature-item" data-aos="fade-up" data-aos-delay="400">
+                        <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg></div>
                         <h3 data-lang="feature4_title">Document Templates</h3>
                         <p data-lang="feature4_text">Instantly generate invoices, proposals, and other essential documents.</p>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- New Testimonial Section -->
+        <section class="testimonials">
+            <div class="container" data-aos="fade-up">
+                <h2 class="section-title">Loved by Entrepreneurs Worldwide</h2>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"DesignerGPT changed the game for me. I went from a simple idea to a fully branded business with a solid plan in just one afternoon. Absolutely incredible!"</p>
+                    <p class="testimonial-author">- Alex Johnson, Founder of EcoPack</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- New CTA Section -->
+        <section class="cta">
+            <div class="container" data-aos="zoom-in">
+                <h2>Ready to Build Your Future?</h2>
+                <p>Join thousands of creators turning their dreams into reality. Your business journey starts now.</p>
+                <a href="pricing.html" class="btn btn-light btn-lg">View Pricing</a>
             </div>
         </section>
     </main>
@@ -80,6 +138,10 @@
         </div>
     </footer>
 
+    <!-- AOS Animation Library JS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    
+    <!-- Your App JS -->
     <script src="app.js"></script>
 </body>
 </html>
