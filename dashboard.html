@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - DesignerGPT</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dashboard-body">
+
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+            <h1 class="logo">DesignerGPT</h1>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active"><a href="#">Business Plan</a></li>
+                    <li><a href="#">Logo Design</a></li>
+                    <li><a href="#">Business Card</a></li>
+                    <li><a href="#">Invoice Template</a></li>
+                    <li><a href="#">Strategic Forecast</a></li>
+                </ul>
+            </nav>
+            <div class="user-info">
+                <p>Usage: 0/2 Today</p>
+                <a href="index.html">Logout</a>
+            </div>
+        </aside>
+
+        <main class="dashboard-main">
+            <header class="dashboard-header">
+                <h2>AI Business Plan Generator</h2>
+            </header>
+            
+            <div class="chat-container">
+                <div class="ai-response">
+                    <p><strong>DesignerGPT:</strong> Welcome! What is the name of your business and what industry are you in? Let's start building your business plan.</p>
+                </div>
+
+                <div class="user-prompt">
+                    <p><strong>You:</strong> My business is called "Artisan Bakes," and it's a home-based bakery specializing in sourdough bread.</p>
+                </div>
+
+                </div>
+
+            <div class="chat-input-area">
+                <textarea placeholder="Type your message here..."></textarea>
+                <label for="file-upload" class="btn">Upload Document</label>
+                <input type="file" id="file-upload" style="display: none;">
+                <button class="btn btn-primary">Send</button>
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>
