@@ -10,66 +10,82 @@
 
     <header>
         <div class="container">
-            <h1 class="logo"><a href="index.html">DesignerGPT</a></h1>
+            <div data-lang="logo_text"><h1 class="logo"><a href="index.html">DesignerGPT</a></h1></div>
             <nav>
                 <ul>
-                    <li><a href="index.html#features">Features</a></li>
-                    <li><a href="pricing.html">Pricing</a></li>
-                    <li><a href="login.html">Login</a></li>
+                    <li><a href="index.html#features" data-lang="nav_features">Features</a></li>
+                    <li><a href="pricing.html" data-lang="nav_pricing">Pricing</a></li>
+                    <li><a href="login.html" data-lang="nav_login">Login</a></li>
                 </ul>
             </nav>
+            <div class="header-controls">
+                <div class="lang-switcher">
+                    <button id="lang-en">EN</button>
+                    <button id="lang-fr">FR</button>
+                </div>
+                <div class="theme-switcher">
+                    <label class="switch">
+                        <input type="checkbox" id="theme-toggle">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
         </div>
     </header>
 
     <main>
         <section class="pricing">
             <div class="container">
-                <h2>Choose Your Plan</h2>
-                <p>Start for free, and upgrade when you're ready to scale.</p>
+                <h2 data-lang="pricing_title">Choose Your Plan</h2>
+                <p data-lang="pricing_subtitle">Start for free, and upgrade when you're ready to scale.</p>
 
                 <div class="pricing-grid">
+                    <!-- Free Tier -->
                     <div class="pricing-card">
-                        <h3>Free</h3>
+                        <h3 data-lang="pricing_free_title">Free</h3>
                         <p class="price"><span>$0</span>/mo</p>
                         <ul>
-                            <li>✓ 2 AI Generations per day</li>
-                            <li>✓ Access to all tools</li>
+                            <li data-lang="pricing_free_f1">✓ 2 AI Generations per day</li>
+                            <li data-lang="pricing_free_f2">✓ Access to all tools</li>
                         </ul>
-                        <a href="login.html" class="btn">Sign Up</a>
+                        <a href="login.html" class="btn" data-lang="pricing_free_btn">Sign Up</a>
                     </div>
 
+                    <!-- Pro Tier -->
                     <div class="pricing-card popular">
-                        <span class="badge">Most Popular</span>
-                        <h3>Pro</h3>
+                        <span class="badge" data-lang="pricing_popular_badge">Most Popular</span>
+                        <h3 data-lang="pricing_pro_title">Pro</h3>
                         <p class="price"><span>$9.99</span>/mo</p>
                         <ul>
-                            <li>✓ 10 AI Generations per day</li>
-                            <li>✓ Priority Support</li>
-                            <li>✓ Access to all tools</li>
+                            <li data-lang="pricing_pro_f1">✓ 10 AI Generations per day</li>
+                            <li data-lang="pricing_pro_f2">✓ Priority Support</li>
+                            <li data-lang="pricing_pro_f3">✓ Access to all tools</li>
                         </ul>
-                        <a href="login.html" class="btn btn-primary">Choose Pro</a>
+                        <a href="login.html" class="btn btn-primary" data-lang="pricing_pro_btn">Choose Pro</a>
                     </div>
 
+                    <!-- Premium Tier -->
                     <div class="pricing-card">
-                        <h3>Premium</h3>
+                        <h3 data-lang="pricing_premium_title">Premium</h3>
                         <p class="price"><span>$16.99</span>/mo</p>
                         <ul>
-                            <li>✓ 20 AI Generations per day</li>
-                            <li>✓ Priority Support</li>
-                            <li>✓ Access to advanced analytics</li>
+                            <li data-lang="pricing_premium_f1">✓ 20 AI Generations per day</li>
+                            <li data-lang="pricing_premium_f2">✓ Priority Support</li>
+                            <li data-lang="pricing_premium_f3">✓ Access to advanced analytics</li>
                         </ul>
-                        <a href="login.html" class="btn">Choose Premium</a>
+                        <a href="login.html" class="btn" data-lang="pricing_premium_btn">Choose Premium</a>
                     </div>
 
-                     <div class="pricing-card">
-                        <h3>One-Off</h3>
+                     <!-- One-off Tier -->
+                    <div class="pricing-card">
+                        <h3 data-lang="pricing_oneoff_title">One-Off</h3>
                         <p class="price"><span>$8</span></p>
                         <ul>
-                            <li>✓ 100 AI Generations Total</li>
-                            <li>✓ No Expiration</li>
-                            <li>✓ Perfect for single projects</li>
+                            <li data-lang="pricing_oneoff_f1">✓ 100 AI Generations Total</li>
+                            <li data-lang="pricing_oneoff_f2">✓ No Expiration</li>
+                            <li data-lang="pricing_oneoff_f3">✓ Perfect for single projects</li>
                         </ul>
-                        <a href="login.html" class="btn">Buy Now</a>
+                        <a href="login.html" class="btn" data-lang="pricing_oneoff_btn">Buy Now</a>
                     </div>
                 </div>
             </div>
@@ -78,9 +94,10 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 DesignerGPT. All rights reserved.</p>
+            <p data-lang="footer_text">&copy; 2025 DesignerGPT. All rights reserved.</p>
         </div>
     </footer>
 
+    <script src="app.js"></script>
 </body>
 </html>
