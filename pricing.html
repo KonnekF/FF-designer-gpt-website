@@ -12,13 +12,17 @@
     <header>
         <div class="container">
             <div data-lang="logo_text"><h1 class="logo"><a href="index.html">DesignerGPT</a></h1></div>
-            <nav>
-                <ul>
-                    <li><a href="index.html#features" data-lang="nav_features">Features</a></li>
-                    <li><a href="pricing.html" data-lang="nav_pricing">Pricing</a></li>
-                    <li><a href="login.html" data-lang="nav_login">Login</a></li>
-                </ul>
-            </nav>
+<nav>
+    <ul>
+        <!-- This link is for index.html. On pricing.html, use href="index.html#features" -->
+        <li><a href="#features" data-lang="nav_features">Features</a></li>
+        <li><a href="pricing.html" data-lang="nav_pricing">Pricing</a></li>
+        
+        <!-- NEW LOGIN/LOGOUT BUTTONS -->
+        <li id="login-button"><a href="#" data-netlify-identity-button data-lang="nav_login">Login</a></li>
+        <li id="logout-button" style="display: none;"><a href="#" data-lang="dashboard_logout">Logout</a></li>
+    </ul>
+</nav>
             <div class="header-controls">
                 <div class="lang-switcher">
                     <button id="lang-en">EN</button>
